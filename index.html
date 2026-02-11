@@ -176,16 +176,20 @@
         <div class="logo">Inkflow</div>
 
         <div class="nav-actions">
-            <button class="login-btn">Login</button>
+            <!-- <button class="login-btn" onclick="goToLogin()">Login</button> -->
+            <button class="login-btn" onclick="goToLogin()">Login</button>
 
+           
+            
             <div class="signup-wrapper">
-                <button class="signup-btn">Sign Up</button>
+                <button class="signup-btn" onclick="goToSignup()">Sign Up</button>
 
-                <div class="dropdown">
+
+                <!-- <div class="dropdown">
                     <a href="#">Manager</a>
                     <a href="#">Team Lead</a>
                     <a href="#">Developer</a>
-                </div>
+                </div> -->
             </div>
         </div>
     </nav>
@@ -204,7 +208,16 @@
             <button class="secondary-btn">Learn More</button>
         </div>
     </section>
-
+    <script>
+        function goToLogin(){
+            window.location.href = "auth.html#login";
+        }
+        
+        function goToSignup(){
+            window.location.href = "auth.html#signup";
+        }
+        </script>
+        
     
     <footer>
         © 2026 Inkflow. Built for teams that care about great documentation.

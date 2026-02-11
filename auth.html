@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inkflow Auth</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI;
+}
+
+body{
+background:#0f1115;
+color:white;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+/* NAVBAR */
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+border-bottom:1px solid #1f2228;
+}
+
+.logo{
+font-size:24px;
+font-weight:700;
+color:#7aa2ff;
+}
+
+/* CENTER */
+.center{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.box{
+width:420px;
+background:#151820;
+padding:40px;
+border-radius:12px;
+border:1px solid #252a35;
+text-align:center;
+}
+
+h2{
+margin-bottom:20px;
+}
+
+/* ROLE BUTTONS */
+.role-btn{
+width:100%;
+padding:12px;
+margin:10px 0;
+background:#1f2430;
+border:none;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
+
+.role-btn:hover{
+background:#7aa2ff;
+color:black;
+}
+
+/* FORM */
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+background:#0f1115;
+border:1px solid #2a2f3a;
+color:white;
+border-radius:6px;
+}
+
+.main-btn{
+width:100%;
+padding:12px;
+background:#7aa2ff;
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+margin-top:10px;
+}
+
+.back{
+margin-top:15px;
+color:#7aa2ff;
+cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:30px;
+border-top:1px solid #1f2228;
+color:#8a8f9c;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<div class="logo">Inkflow</div>
+</nav>
+
+<div class="center">
+<div class="box">
+
+<!-- ROLE SELECT -->
+<div id="roleSelect">
+<h2 id="title">Choose Role</h2>
+
+<button class="role-btn" onclick="selectRole('Manager')">Manager</button>
+<button class="role-btn" onclick="selectRole('Team Lead')">Team Lead</button>
+<button class="role-btn" onclick="selectRole('Developer')">Developer</button>
+</div>
+
+<!-- FORM -->
+<div id="formBox" style="display:none;">
+<h2 id="formTitle"></h2>
+
+<input type="email" placeholder="Email">
+<input type="password" placeholder="Password">
+
+<button class="main-btn" id="actionBtn"></button>
+
+<div class="back" onclick="goBack()">← Back</div>
+</div>
+
+</div>
+</div>
+
+<footer>
+© 2026 Inkflow. Built for teams that care about great documentation.
+</footer>
+
+<script>
+let mode = "login";
+
+window.onload = () => {
+if(window.location.hash === "#signup"){
+mode = "signup";
+document.getElementById("title").innerText = "Sign up — Choose Role";
+}
+};
+
+function selectRole(role){
+document.getElementById("roleSelect").style.display="none";
+document.getElementById("formBox").style.display="block";
+
+if(mode === "login"){
+document.getElementById("formTitle").innerText = role + " Login";
+document.getElementById("actionBtn").innerText = "Login";
+}else{
+document.getElementById("formTitle").innerText = role + " Sign Up";
+document.getElementById("actionBtn").innerText = "Create Account";
+}
+}
+
+function goBack(){
+document.getElementById("roleSelect").style.display="block";
+document.getElementById("formBox").style.display="none";
+}
+</script>
+
+</body>
+</html>
