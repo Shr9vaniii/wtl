@@ -1,6 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inkflow — Documentation Collaboration</title>
@@ -18,15 +20,23 @@
             background-color: #0f1115;
             color: #e6e6e6;
             min-height: 100vh;
+    
+
         }
 
         
         .navbar {
+            position: absolute;   /* makes it sit on top of hero */
+            top: 0;
+            left: 0;
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 60px;
-            border-bottom: 1px solid #1f2228;
+            background: transparent;   /* remove black look */
+            border-bottom: none;       /* remove bottom line */
+            z-index: 10;
         }
 
         .logo {
@@ -58,6 +68,10 @@
 
         
         .signup-wrapper {
+            position: relative;
+        }
+
+        .login-wrapper {
             position: relative;
         }
 
@@ -97,87 +111,28 @@
             background: #1f2430;
         }
 
-        .signup-wrapper:hover .dropdown {
+        /*.signup-wrapper:hover .dropdown {
             display: flex;
         }
 
-        
-        .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 120px 20px;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: #7aa2ff;
-        }
-
-        .hero p {
-            max-width: 700px;
-            font-size: 18px;
-            line-height: 1.6;
-            color: #b8bcc7;
-            margin-bottom: 40px;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 20px;
-        }
-
-        .primary-btn {
-            padding: 14px 28px;
-            background: #7aa2ff;
-            color: #0f1115;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .secondary-btn {
-            padding: 14px 28px;
-            background: transparent;
-            color: #e6e6e6;
-            border: 1px solid #2a2f3a;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .secondary-btn:hover {
-            background: #1a1d24;
-        }
-
-        
-        footer {
-            text-align: center;
-            padding: 30px;
-            border-top: 1px solid #1f2228;
-            color: #8a8f9c;
-            font-size: 14px;
-        }
+        .login-wrapper:hover .dropdown {
+            display:flex;
+        }*/
+  
     </style>
 </head>
 
 <body>
     
     <nav class="navbar">
-        <div class="logo">Inkflow</div>
+        <div style="font-size: 24px;font-weight: 700;color: #7aa2ff;letter-spacing: 1px; ">Inkflow</div>
 
         <div class="nav-actions">
-            <!-- <button class="login-btn" onclick="goToLogin()">Login</button> -->
+          
+            
             <button class="login-btn" onclick="goToLogin()">Login</button>
+           
+        
 
            
             
@@ -185,11 +140,11 @@
                 <button class="signup-btn" onclick="goToSignup()">Sign Up</button>
 
 
-                <!-- <div class="dropdown">
+                 <!---<div class="dropdown">
                     <a href="#">Manager</a>
                     <a href="#">Team Lead</a>
                     <a href="#">Developer</a>
-                </div> -->
+                </div> --->
             </div>
         </div>
     </nav>
@@ -204,7 +159,7 @@
         </p>
 
         <div class="hero-actions">
-            <button class="primary-btn">Get Started</button>
+            <button class="primary-btn" onclick="goToSignup()">Get Started</button>
             <button class="secondary-btn">Learn More</button>
         </div>
     </section>
@@ -217,7 +172,7 @@
             window.location.href = "auth.html#signup";
         }
         </script>
-        
+
     
     <footer>
         © 2026 Inkflow. Built for teams that care about great documentation.

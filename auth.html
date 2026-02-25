@@ -14,7 +14,9 @@ font-family:Segoe UI;
 }
 
 body{
-background:#0f1115;
+    background: 
+    linear-gradient(rgba(24, 38, 66, 0.85), rgba(15,17,21,0.85)),
+    url("https://images.unsplash.com/photo-1555066931-4365d14bab8c") center/cover no-repeat;  
 color:white;
 min-height:100vh;
 display:flex;
@@ -30,11 +32,12 @@ padding:20px 60px;
 border-bottom:1px solid #1f2228;
 }
 
-.logo{
-font-size:24px;
-font-weight:700;
-color:#7aa2ff;
-}
+.logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #7aa2ff;
+            letter-spacing: 1px;
+        }
 
 /* CENTER */
 .center{
@@ -125,17 +128,17 @@ color:#8a8f9c;
 <div id="roleSelect">
 <h2 id="title">Choose Role</h2>
 
-<button class="role-btn" onclick="selectRole('Manager')">Manager</button>
-<button class="role-btn" onclick="selectRole('Team Lead')">Team Lead</button>
-<button class="role-btn" onclick="selectRole('Developer')">Developer</button>
+<button class="role-btn" onclick="selectRole('Manager')"><h3>Manager</h3></button>
+<button class="role-btn" onclick="selectRole('Team Lead')"><h3>Team Lead</h3></button>
+<button class="role-btn" onclick="selectRole('Developer')"><h3>Developer</h3></button>
 </div>
 
 <!-- FORM -->
 <div id="formBox" style="display:none;">
 <h2 id="formTitle"></h2>
 
-<input type="email" placeholder="Email">
-<input type="password" placeholder="Password">
+<input type="email" placeholder="Email" required>
+<input type="password" placeholder="Password" required minlength="6">
 
 <button class="main-btn" id="actionBtn"></button>
 
